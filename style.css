@@ -1,0 +1,166 @@
+:root {
+    --very-dark-gray: hsl(0, 0%, 17%);
+    --dark-gray: hsl(0, 0%, 59%);
+
+    --input-font: 18px;
+
+    --fw-4: 400;
+    --fw-5: 500;
+    --fw-7: 700;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: var(--fw-4);
+    line-height: 1.4;
+    color: var(--dark-gray);
+}
+input {
+    font-size: 16px;
+    color: #111;
+    outline: none;
+    font-weight: var(--fw-7);
+    border: 1px solid var(--dark-gray);
+    padding: 0.938em 1.5em;
+    border-radius: 8px 0 0 8px;
+}
+button {
+    background-color: var(--very-dark-gray);
+    padding: 0 1em;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 0 8px 8px 0;
+}
+
+input::placeholder {
+    font: inherit;
+    font-weight: var(--fw-5);
+}
+
+h1{
+    font-size: calc(1.3em + 1vw);
+    font-weight: var(--fw7);
+    line-height: 1;
+    color: #fff;
+}
+h2 {
+    font-size: var(--input-font);
+    font-weight: var(--fw-5);
+    color: var(--very-dark-gray);
+    text-align: center;
+}
+h4 {
+    font-size: 13px;
+    color: var(--dark-gray);
+    font-weight: var(--fw-5);
+}
+.container {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.wrapper {
+    height: 100%;
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+.flexcol {
+    display: flex;
+    flex-direction: column;
+}
+.flexcenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-section {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-image: url("images/pattern-bg-mobile.png");
+    padding: 0.938em 0.938em;
+    align-items: center;
+}
+.form-section .form {
+    margin-top: 1.5em;
+    width: 100%;
+}
+.form-section .form form {
+    width: 100%;
+    align-items: stretch;
+}
+.form-section .form form input {
+    flex: 1;
+}
+
+.form-section .states {
+    list-style: none;
+    padding: 1em;
+    background-color: #fff;
+    width: calc(100% - 1.5em);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    align-items: stretch;
+    z-index: 100000;
+    border-radius: 8px;
+    gap: 10px;
+    display: none;
+}
+.form-section.display-states .states {
+    display: flex;
+} 
+
+.form-section .states li {
+    justify-content: flex-start;
+    flex: 0 0 100%;
+}
+
+.map-section {
+    flex: 1;
+}
+.map-section .map {
+    height: 100%;
+}
+@media (min-width: 992px) {
+    .form-section {
+        background-image: url("images/pattern-bg-desktop.png");
+        height: 200px;
+    }
+    .form-section .form {
+        max-width: 40% !important;
+        width: 40%;
+    }
+    .form-section .form form {
+        max-width: 100%;
+    }
+    .form-section .states {
+        width: 80%;
+    }
+    .form-section .states li {
+        flex: 0 0 calc(25% - 10px);
+    }
+    .form-section .states li:not(:last-of-type) {
+        border-right: 1px solid var(--dark-gray);
+    }
+}
